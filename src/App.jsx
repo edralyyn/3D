@@ -5,7 +5,6 @@ import ThreeDObject from './components/ThreeDObject';
 import HealthSection from './components/HealthSection';
 import SummaryButton from './components/SummaryButton';
 import Login from './components/Login';
-import Signup from './components/Signup';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -14,7 +13,6 @@ const App = () => {
     return (
       <div>
         <Login setLoggedIn={setLoggedIn} />
-        <Signup />
       </div>
     );
   }
