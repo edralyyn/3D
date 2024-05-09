@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
 import VerticalNavbar from "./components/VerticalNavbar";
-import ThreeDObject from './components/ThreeDObject';
+import ThreeDObject from './Renders/ThreeDObject';
 import HealthSection from './components/HealthSection';
 import SummaryButton from './components/SummaryButton';
 import Login from './components/Login';
