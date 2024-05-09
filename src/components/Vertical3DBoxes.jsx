@@ -2,11 +2,11 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls} from '@react-three/drei';
 import './cssfiles/Vertical3DModels.css';
-import Processor from './Processor';
-import GPU from './GPU';
-import RAM from './RAM';
-import HDD from './HDD';
-import SSD from './SSD';
+import Processor from '../Renders/Processor';
+import GPU from '../Renders/GPU';
+import RAM from '../Renders/RAM';
+import HDD from '../Renders/HDD';
+import SSD from '../Renders/SSD';
 
 // Parent component combining the two GLB models
 const Vertical3DModels = () => {
