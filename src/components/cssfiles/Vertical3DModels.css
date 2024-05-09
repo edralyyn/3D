@@ -1,0 +1,25 @@
+/* CSS file: Vertical3DModels.css */
+
+/* Main container for the component */
+.vertical-3d-models {
+  display: flex;
+  flex-direction: column;
+  /* Full height of the viewport */
+  
+}
+
+/* Canvas container for each GLB model */
+.canvas-container {
+  /* Allow each canvas container to take up half the height of the main container */  
+  background-color: bisque;
+  display: flex;
+  justify-content: center; /* Center the canvas horizontally */
+  margin-bottom: 10px;
+  align-items: center; /* Center the canvas vertically */
+}
+
+/* Style for the Canvas elements */
+.canvas-container canvas {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+}

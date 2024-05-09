@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #ffebeb;
+  border-radius: 20px;
+  margin-left: 20%;
+  margin-top: 1%;
+  margin-right: 30%;
+  
+  }
+  
+  .left-section {
+    display: flex;
+    gap: 10px;
+    margin-right: 20%;
+  }
+  
+  .action-btn {
+    padding: 5px 10px;
+    font-size: 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .action-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .arrow-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .left-arrow {
+    margin-right: 10px;
+    
+    
+  }
+  
+  .right-arrow {
+    margin-left: 10px;
+   
+  }
+  
+  .text-placeholder {
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: rgb(62, 156, 185);
+    /* Add 3D effect */
+    color: #000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: translateZ(1px);
+    /* Additional optional styling */
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .pctext {
+    align-items: center;
+    justify-content: center;
+    margin-left: 40%;
+    font-size: 24px;
+  }

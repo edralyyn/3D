@@ -1,0 +1,54 @@
+/* Parent container styling */
+.container {
+  display: flex; /* Arrange vertical text and navbar side by side */
+  align-items: center; /* Vertically center elements */
+  justify-content: flex-start; /* Align elements to the left */
+}
+
+/* Vertical text styling */
+.vertical-text {
+  writing-mode: vertical-rl; /* Rotate text vertically */
+  transform: rotate(180deg); /* Rotate text to be readable from bottom to top */
+  text-align: center; /* Center text horizontally */
+  padding: 10px; /* Optional: Add padding */
+  margin-top: 275px;
+  margin-left: 35px;
+  color: black; /* Customize text color as desired */
+  font-weight: bold; /* Make text bold */
+  font-size: 24px;
+}
+
+/* Vertical Navbar styles */
+.vertical-navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #977344;
+  width: 50px;
+  bottom: 200px;
+  position: fixed;
+  left: 10%; /* Adjusted left positioning */
+    /* Adjust as needed */
+    /* Adjust as needed */
+}
+
+/* Arrow button styling */
+.arrow-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.object-placeholder {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f5c292;
+}

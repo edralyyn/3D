@@ -1,0 +1,9 @@
+.three-d-object {
+  position: fixed;
+  top: 55%;
+  left: 55%; 
+  transform: translate(-50%, -50%); 
+  width: 150vh; 
+  height: 75vh; 
+  pointer-events: none; 
+}

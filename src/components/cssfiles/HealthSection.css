@@ -1,0 +1,39 @@
+.health-section {
+    position: fixed; /* Keep the section fixed on the page */
+    top: 50%; /* Position in the middle of the screen vertically */
+    right: 5%; /* Position close to the right side of the screen */
+    transform: translateY(-50%); /* Center vertically */
+    width: 200px; /* Adjust width as needed */
+    padding: 10px; /* Add padding */
+    background-color: #ffffff; /* Set a background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow */
+  }
+  
+  .health-section h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc; /* Add a border below the heading */
+  }
+  
+  .health-section p {
+    margin: 0; /* Remove margin from the paragraph */
+  }
+  
+  /* Health bar container */
+  .health-bar-container {
+    width: 100%; /* Full width of the container */
+    height: 20px; /* Adjust height as needed */
+    background-color: #e0e0e0; /* Light grey background color */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 10px; /* Margin below the health bar */
+  }
+  
+  /* Health bar itself */
+  .health-bar {
+    height: 100%; /* Full height of the container */
+    background-color: #4caf50; /* Green color for the health bar */
+    border-radius: 10px; /* Match the border-radius of the container */
+  }
+  
