@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import './cssfiles/ThreeDObject.css';
+import '../components/cssfiles/ThreeDObject.css';
 
 // Component to render the 3D model
 const ModelRenderer = ({ url }) => {
