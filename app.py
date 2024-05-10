@@ -1,10 +1,13 @@
 # app.py
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 from login import authenticate
 from signup import create_account
+import os
+import sys
+import subprocess
 
 app = Flask(__name__)
 CORS(app)
@@ -28,6 +31,19 @@ def login():
 @app.route('/signup', methods=['POST'])
 def signup():
     return create_account()
+
+@app.route('/pc_output', methods=['GET'])
+def pc_output():
+    try:
+        # Execute pc.py and capture its output
+        output = subprocess.check_output(['python', 'pc.py']).decode('utf-8')
+        # Split the output into lines
+        output_lines = output.split('\n')
+        # Remove empty lines
+        output_lines = [line.strip() for line in output_lines if line.strip()]
+        return jsonify({'output': output_lines})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
