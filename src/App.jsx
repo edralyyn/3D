@@ -5,6 +5,7 @@ import ThreeDObject from './Renders/ThreeDObject';
 import HealthSection from './components/HealthSection';
 import SummaryButton from './components/SummaryButton';
 import Login from './components/Login';
+import Functions from './components/Functions';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -21,10 +22,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <VerticalNavbar />
       <ThreeDObject />
-      <HealthSection />
-      <SummaryButton />
     </div>
   );
 };
