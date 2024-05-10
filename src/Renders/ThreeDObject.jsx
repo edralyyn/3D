@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import '../components/cssfiles/ThreeDObject.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Vertical3DModels from '../components/Vertical3DBoxes';
 
 // Component to render the 3D model
 const ModelRenderer = ({ url }) => {
@@ -56,21 +58,28 @@ const ThreeDObject = () => {
     const [modelPath] = useState('src/assets/models/gaming_desktop_pc.glb');
 
     return (
+        <div style={{ position: "relative" }}>
         <div className="three-d-object" style={{ backgroundColor: "#04151f" }}>
-            <Canvas camera={{ position: [15, 15, 15], fov: 50 }}>
-                {/* Add ambient lighting for better visibility */}
-                <ambientLight intensity={1} />
-
-                {/* Render the pulsing red light */}
-                <PulsingRedLight />
-
-                {/* OrbitControls for interactive camera control */}
-                <OrbitControls />
-
-                {/* Render the 3D model using the ModelRenderer component */}
-                {modelPath && <ModelRenderer url={modelPath} />}
-            </Canvas>
+          <Canvas camera={{ position: [15, 15, 15], fov: 50 }}>
+            {/* Add ambient lighting for better visibility */}
+            <ambientLight intensity={1} />
+      
+            {/* Render the pulsing red light */}
+            <PulsingRedLight />
+      
+            {/* OrbitControls for interactive camera control */}
+            <OrbitControls />
+      
+            {/* Render the 3D model using the ModelRenderer component */}
+            {modelPath && <ModelRenderer url={modelPath} />}
+          </Canvas>
         </div>
+        <div style={{ position: "absolute", top: 0, left: 0 }}>
+          <Vertical3DModels />
+        </div>
+      </div>
+      
+        
     );
 };
 

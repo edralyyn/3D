@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
-import VerticalNavbar from "./components/VerticalNavbar";
+import Collect from './components/Collect';
 import ThreeDObject from './Renders/ThreeDObject';
 import HealthSection from './components/HealthSection';
 import SummaryButton from './components/SummaryButton';
 import Login from './components/Login';
-import Functions from './components/Functions';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -23,6 +23,9 @@ const App = () => {
     <div>
       <Navbar />
       <ThreeDObject />
+      <HealthSection />
+      <SummaryButton />
+      <Collect/>
     </div>
   );
 };

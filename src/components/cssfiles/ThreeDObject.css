@@ -1,9 +1,9 @@
 .three-d-object {
   position: fixed;
-  top: 55%;
-  left: 55%; 
-  transform: translate(-50%, -50%); 
-  width: 150vh; 
-  height: 75vh; 
-  pointer-events: none; 
+  top: calc(50% + 60px); /* Adjusted to 50% + navbar height */
+  left: 38%; /* Adjusted for centering */
+  transform: translate(-50%, -50%);
+  width: 75vw; /* Changed to be 40% of the viewport width */
+  height: 90vh; /* Adjusted to be the same as width */
+  pointer-events: none;
 }

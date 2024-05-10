@@ -7,7 +7,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar bg-black rounded-bottom">
+    <nav className="navbar bg-black">
       <div className="container-fluid">
         <form className="d-flex m-3 ms-0" role="search">
           <input className="form-control me-2" type="form" placeholder="Number of Days" aria-label="Search" />

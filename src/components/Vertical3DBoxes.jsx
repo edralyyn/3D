@@ -7,11 +7,12 @@ import GPU from '../Renders/GPU';
 import RAM from '../Renders/RAM';
 import HDD from '../Renders/HDD';
 import SSD from '../Renders/SSD';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Parent component combining the two GLB models
 const Vertical3DModels = () => {
     return (
-        <div className="vertical-3d-models">
+        <div className="vertical-3d-models ms-10 mt-2">
             <div className="canvas-container" style={{ height: '120px', width: '120px' }}>
                 <Canvas camera={{ position: [5, 5, 2], fov: 50 }}>
                     <ambientLight intensity={100} /> {/* Set higher intensity for better visibility */}
