@@ -5,7 +5,7 @@
 $events = Get-WinEvent -LogName System
 
 # Define the path to the folder
-$folderPath = (Get-Location).Path + "\Eventlogs\SYSLOG"
+$folderPath = (Get-Location).Path + "\SYSLOG"
 
 # Check if the folder exists, if not, create it
 if (-not (Test-Path -Path $folderPath)) {
