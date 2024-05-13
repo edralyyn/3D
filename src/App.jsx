@@ -7,6 +7,8 @@ import SummaryButton from './components/SummaryButton';
 import Login from './components/Login';
 import Devices from './components/Devices';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PCSelector from './components/PCSelector';
+
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -25,6 +27,7 @@ const App = () => {
       <Navbar />
       <ThreeDObject />
       <Devices/>
+      <PCSelector/>
       <HealthSection />
       <SummaryButton />
       
