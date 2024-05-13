@@ -1,0 +1,40 @@
+.devices-section {
+    position: fixed;
+    top: 123px;
+    right: 20px;
+}
+
+.window {
+    width: 580px;
+    height: 400px;
+    background-color: #b4b2b2;
+    border: 1px solid #161515;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.window-header {
+    background-color: #ddd;
+    padding: 5px;
+    border-bottom: 1px solid #000000;
+    border-radius: 5px 5px 0 0;
+}
+.window-header2 {
+    margin-top: 25%;
+    background-color: #ddd;
+    padding: 5px;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+.title {
+    font-weight: bold;
+}
+
+
+.window-close {
+    cursor: pointer;
+}
+
+.window-content {
+    padding: 10px;
+}

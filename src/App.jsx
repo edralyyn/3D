@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from "./components/Navbar";
-import Collect from './components/Collect';
+
 import ThreeDObject from './Renders/ThreeDObject';
 import HealthSection from './components/HealthSection';
 import SummaryButton from './components/SummaryButton';
 import Login from './components/Login';
+import Devices from './components/Devices';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -23,9 +24,10 @@ const App = () => {
     <div>
       <Navbar />
       <ThreeDObject />
+      <Devices/>
       <HealthSection />
       <SummaryButton />
-      <Collect/>
+      
     </div>
   );
 };
