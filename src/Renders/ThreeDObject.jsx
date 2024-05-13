@@ -74,7 +74,7 @@ const ThreeDObject = () => {
             {modelPath && <ModelRenderer url={modelPath} />}
           </Canvas>
         </div>
-        <div style={{ position: "absolute", top: 0, left: 0 }}>
+        <div style={{ position: "absolute", top: 150, left: 100 }}>
           <Vertical3DModels />
         </div>
       </div>

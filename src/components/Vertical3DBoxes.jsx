@@ -9,30 +9,7 @@ import HDD from '../Renders/HDD';
 import SSD from '../Renders/SSD';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const MiddleCanvas = ({ selectedModel, setSelectedModel }) => {
-    const handleModelClick = () => {
-        setSelectedModel(null);
-    };
 
-    return (
-        <div className="middle-canvas" onClick={handleModelClick}>
-            <Canvas camera={{ position: [15, 15, 15], fov: 50 }}>
-                <ambientLight intensity={1} />
-                <OrbitControls />
-                {/* Render the selected model in the middle canvas */}
-                {selectedModel && (
-                    <React.Suspense fallback={null}>
-                        {selectedModel === 'processor' && <Processor />}
-                        {selectedModel === 'gpu' && <GPU />}
-                        {selectedModel === 'ram' && <RAM />}
-                        {selectedModel === 'hdd' && <HDD />}
-                        {selectedModel === 'ssd' && <SSD />}
-                    </React.Suspense>
-                )}
-            </Canvas>
-        </div>
-    );
-};
 
 const Vertical3DModels = () => {
     const [selectedModel, setSelectedModel] = useState(null);
@@ -46,9 +23,9 @@ const Vertical3DModels = () => {
     };
 
     return (
-        <div className="vertical-3d-models ms-10 mt-2" >
+        <div className="vertical-3d-models" style={{backgroundColor:""}}>
             {/* Render models in the vertical navbar */}
-            <div className={`canvas-container ${selectedModel === 'processor' && 'selected'}`} style={{ height: '120px', width: '120px' }} onClick={() => handleModelClick('processor')}>
+            <div className={`canvas-container ${selectedModel === 'processor' && 'selected'}`} style={{ height: '150px', width: '150px'}} onClick={() => handleModelClick('processor')}>
                 <Canvas camera={{ position: [5, 5, 2], fov: 50 }}>
                     <ambientLight intensity={100} />
                     <OrbitControls />
@@ -56,7 +33,7 @@ const Vertical3DModels = () => {
                 </Canvas>
             </div>
             {/* Render other models similarly */}
-            <div className={`canvas-container ${selectedModel === 'gpu' && 'selected'}`} style={{ height: '120px', width: '120px' }} onClick={() => handleModelClick('gpu')}>
+            <div className={`canvas-container ${selectedModel === 'gpu' && 'selected'}`} style={{ height: '150px', width: '150px' }} onClick={() => handleModelClick('gpu')}>
                 <Canvas camera={{ position: [1, -2, 7], fov: 50 }}>
                     <ambientLight intensity={100} />
                     <OrbitControls />
@@ -64,7 +41,7 @@ const Vertical3DModels = () => {
                 </Canvas>
             </div>
             {/* Render other models similarly */}
-            <div className={`canvas-container ${selectedModel === 'ram' && 'selected'}`} style={{ height: '120px', width: '120px' }} onClick={() => handleModelClick('ram')}>
+            <div className={`canvas-container ${selectedModel === 'ram' && 'selected'}`} style={{ height: '150px', width: '150px' }} onClick={() => handleModelClick('ram')}>
                 <Canvas camera={{ position: [-10, 2, 10], fov: 50 }}>
                     <ambientLight intensity={2} />
                     <OrbitControls />
@@ -72,7 +49,7 @@ const Vertical3DModels = () => {
                 </Canvas>
             </div>
             {/* Render other models similarly */}
-            <div className={`canvas-container ${selectedModel === 'hdd' && 'selected'}`} style={{ height: '120px', width: '120px' }} onClick={() => handleModelClick('hdd')}>
+            <div className={`canvas-container ${selectedModel === 'hdd' && 'selected'}`} style={{ height: '150px', width: '150px' }} onClick={() => handleModelClick('hdd')}>
                 <Canvas camera={{ position: [3, 5, 6], fov: 50 }}>
                     <ambientLight intensity={2} />
                     <OrbitControls />
@@ -80,7 +57,7 @@ const Vertical3DModels = () => {
                 </Canvas>
             </div>
             {/* Render other models similarly */}
-            <div className={`canvas-container ${selectedModel === 'ssd' && 'selected'}`} style={{ height: '120px', width: '120px' }} onClick={() => handleModelClick('ssd')}>
+            <div className={`canvas-container ${selectedModel === 'ssd' && 'selected'}`} style={{ height: '150px', width: '150px' }} onClick={() => handleModelClick('ssd')}>
                 <Canvas camera={{ position: [1, 2, 3], fov: 50 }}>
                     <ambientLight intensity={2} />
                     <OrbitControls />
@@ -88,8 +65,7 @@ const Vertical3DModels = () => {
                 </Canvas>
             </div>
 
-            {/* Render middle canvas */}
-            <MiddleCanvas selectedModel={selectedModel} setSelectedModel={setSelectedModel} />
+        
         </div>
     );
 };
