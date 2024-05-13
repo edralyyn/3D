@@ -32,5 +32,14 @@ def login():
 def signup():
     return create_account()
 
+@app.route('/runscript', methods=['POST'])
+def run_script():
+    try:
+        # Run your Python script
+        output = subprocess.run(['python', 'pc.py'], capture_output=True, text=True)
+        return jsonify({"message": "Script executed successfully", "output": output.stdout}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=3000)
