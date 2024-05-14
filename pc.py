@@ -1,6 +1,7 @@
 import os
 import sys
 from file_ops import count_csv_files
+import subprocess
 
 # Adjusting path to include the directory where collect.py and Eventlogs are located
 collect_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "Eventlogs"))
@@ -14,6 +15,10 @@ def main():
     try:
         # Execute the PowerShell script to collect logs
         collect.run_powershell_script("ps-collect-logwithip-local.ps1")
+        
+        # Execute the translate.py script to translate CSV files
+        translate_script_path = os.path.join(os.path.dirname(__file__), "translate.py")
+        subprocess.run(["python", translate_script_path])
         
         # Define the path to the CSV files
         current_directory = os.getcwd()
