@@ -41,14 +41,14 @@ function Navbar({ setLoggedIn }) {
         return response.json();
       })
       .then(data => {
+        console.log('Prediction Output:', data.output); // Log the prediction output to the console
         document.dispatchEvent(new CustomEvent('predictionOutput', { detail: data.output }));
       })
       .catch(error => {
         console.error('Failed to run prediction:', error);
       });
-  };
+  };  
   
-
   return (
     <nav className="navbar bg-black">
       <div className="container-fluid">
