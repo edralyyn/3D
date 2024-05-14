@@ -1,9 +1,16 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
-function Navbar() {
-  const handleLogout = () => {
 
+function Navbar({ setLoggedIn }) {
+  const handleLogout = () => {
+    // Clear user session logic
+    if (typeof setLoggedIn === 'function') {
+      setLoggedIn(false); // Update loggedIn state in parent component to false
+      console.log('User logged out');
+    } else {
+      console.error('setLoggedIn is not a function');
+    }
   };
   
   const handleRunScript = () => {
@@ -25,7 +32,7 @@ function Navbar() {
         </form>
         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
           <button className="btn btn-warning me-md-2" type="button" onClick={handleRunScript}>Collect</button>
-          <button className="btn btn-primary me-md-2" type="button">logout</button>
+          <button className="btn btn-primary me-md-2" type="button" onClick={handleLogout}>Logout</button>
         </div>
       </div>
     </nav>
