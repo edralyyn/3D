@@ -1,5 +1,3 @@
-# app.py
-
 from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 from flask_mongoengine import MongoEngine
@@ -36,6 +34,16 @@ def signup():
 def run_script():
     try:
         output = subprocess.run(['python', 'pc.py'], capture_output=True, text=True)
+        return jsonify({"output": output.stdout}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    try:
+        data = request.json
+        num_days = data.get('numDays')
+        output = subprocess.run(['python', 'prediction.py', str(num_days)], capture_output=True, text=True)
         return jsonify({"output": output.stdout}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
