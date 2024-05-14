@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
-const GLBModel1 = () => {
+const GLBModel1 = ({ isSelected, onClick }) => {
     // Load the GLB file
     const { scene } = useGLTF('src/assets/models/pc_cpu_processor.glb');
     
@@ -12,23 +12,34 @@ const GLBModel1 = () => {
     // Use state to manage the scale of the model
     const [scale, setScale] = useState([1, 1, 1]);
 
+    // Update the scale based on the selection state
+    useEffect(() => {
+        if (isSelected) {
+            setScale([1.5, 1.5, 1.5]); // Adjust the selected scaling factor as needed
+        } else {
+            setScale([1, 1, 1]);
+        }
+    }, [isSelected]);
+
     // Event handler for mouse enter (hover)
     const handlePointerEnter = () => {
-        // Increase the scale when hovered
-        setScale([1.5, 1.5, 1.5]); // Adjust the scaling factor as needed
+        if (!isSelected) {
+            setScale([1.5, 1.5, 1.5]); // Adjust the hover scaling factor as needed
+        }
     };
     
     // Event handler for mouse leave
     const handlePointerLeave = () => {
-        // Reset the scale when the mouse leaves
-        setScale([1, 1, 1]);
+        if (!isSelected) {
+            setScale([1, 1, 1]);
+        }
     };
 
     // Use the useFrame hook to apply rotation to the model
     useFrame(() => {
         if (modelRef.current) {
             // Increment the model's y rotation slightly on each frame for spinning
-            ; // Adjust the rotation speed as needed
+            // modelRef.current.rotation.y += 0.01; // Adjust the rotation speed as needed
         }
     });
 
@@ -39,6 +50,7 @@ const GLBModel1 = () => {
             object={scene}
             scale={scale}
             position={[0, 0, 0]}
+            onClick={onClick}
             onPointerEnter={handlePointerEnter}
             onPointerLeave={handlePointerLeave}
         />

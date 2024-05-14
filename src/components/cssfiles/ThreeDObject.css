@@ -4,6 +4,6 @@
   left: 38%; /* Adjusted for centering */
   transform: translate(-50%, -50%);
   width: 75vw; /* Changed to be 40% of the viewport width */
-  height: 90vh; /* Adjusted to be the same as width */
+  height: 85vh; /* Adjusted to be the same as width */
   pointer-events: none;
 }

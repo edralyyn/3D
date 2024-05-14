@@ -1,7 +1,7 @@
 .health-section {
     position: fixed; /* Keep the section fixed on the page */
-    top: 41%; /* Position in the middle of the screen vertically */
-    right: 20px; /* Position close to the right side of the screen */
+    top: 45%; /* Position in the middle of the screen vertically */
+    right: 1%; /* Position close to the right side of the screen */
     
     width: 580px; /* Adjust width as needed */
     height: 750px;

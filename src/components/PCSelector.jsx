@@ -13,7 +13,7 @@ const PCSelector = () => {
     };
 //EDRA DITO HERE
     return (
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="d-flex align-items-center justify-content-center ml-2">
             <button className="btn btn-light mr-2" onClick={handlePrevClick}>{"<"}</button>
             <span className="h4 mb-0">PC{selectedPC}</span>
             <button className="btn btn-light ml-2" onClick={handleNextClick}>{">"}</button>
