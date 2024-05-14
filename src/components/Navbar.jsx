@@ -6,11 +6,14 @@ function Navbar() {
 
   };
   
-  const runPythonScript = () => {
-    fetch('http://localhost:3000/runscript', { method: 'POST' })
+  const handleRunScript = () => {
+    fetch('http://localhost:5000/runscript', { method: 'POST' })
       .then(response => response.json())
-      .then(data => alert(`Script output: ${data.output}`))
-      .catch(error => alert('Failed to run script: ' + error));
+      .then(data => {
+        // Update the script output in HealthSection
+        document.dispatchEvent(new CustomEvent('scriptOutput', { detail: data.output }));
+      })
+      .catch(error => console.error('Failed to run script:', error));
   };
 
   return (
@@ -21,7 +24,7 @@ function Navbar() {
           <button className="btn btn-sm btn-primary" type="submit">Forecast</button>
         </form>
         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button className="btn btn-warning me-md-2" type="button" onClick={runPythonScript}>Collect</button>
+          <button className="btn btn-warning me-md-2" type="button" onClick={handleRunScript}>Collect</button>
           <button className="btn btn-primary me-md-2" type="button">logout</button>
         </div>
       </div>

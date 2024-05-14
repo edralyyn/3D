@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './cssfiles/HealthSection.css';
 
 const HealthSection = () => {
-  // Create a state variable for health level (0 to 100)
-  const [health, setHealth] = useState(20); // Set initial health level as 20 (as an example)
+  const [health, setHealth] = useState(20);
+  const [scriptOutput, setScriptOutput] = useState('');
+
+  useEffect(() => {
+    const updateScriptOutput = (event) => {
+      setScriptOutput(event.detail);
+    };
+
+    document.addEventListener('scriptOutput', updateScriptOutput);
+
+    return () => {
+      document.removeEventListener('scriptOutput', updateScriptOutput);
+    };
+  }, []); // Ensure the dependency array is provided
 
   return (
     <div className="health-section">
@@ -14,13 +26,14 @@ const HealthSection = () => {
           <li>Health {health}%</li>
         </ul>
       </div>
-      {/* Health bar container */}
       <div className="health-bar-container">
         <div className="health-bar" style={{ width: `${health}%` }}>
           {/* Inner content of health bar can be added here */}
         </div>
       </div>
-      {/* Add controls or other elements as needed */}
+      <div>
+        {scriptOutput && <pre>{scriptOutput}</pre>}
+      </div>
     </div>
   );
 };
