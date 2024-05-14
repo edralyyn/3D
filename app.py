@@ -9,6 +9,7 @@ import subprocess
 
 app = Flask(__name__)
 CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 app.config['MONGODB_SETTINGS'] = {
     'db': 'admin',
     'host': 'mongodb+srv://edralyyyyynperaltaa:magandaako@cluster.jarpoqa.mongodb.net/Accounts'
