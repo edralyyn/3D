@@ -35,9 +35,8 @@ def signup():
 @app.route('/runscript', methods=['POST'])
 def run_script():
     try:
-        # Run your Python script
         output = subprocess.run(['python', 'pc.py'], capture_output=True, text=True)
-        return jsonify({"message": "Script executed successfully", "output": output.stdout}), 200
+        return jsonify({"output": output.stdout}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
